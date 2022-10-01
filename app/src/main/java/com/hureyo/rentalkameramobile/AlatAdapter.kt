@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hureyo.rentalkameramobile.helper.toRupiah
 import kotlinx.android.synthetic.main.item_alat.view.*
 
 class AlatAdapter (private val list: ArrayList<AlatResponse>): RecyclerView.Adapter<AlatAdapter.AlatViewHolder>() {
@@ -12,9 +13,9 @@ class AlatAdapter (private val list: ArrayList<AlatResponse>): RecyclerView.Adap
             with(itemView) {
                 tv_nama_alat.text = alatResponse.nama_alat
                 tv_kategori.text = alatResponse.nama_kategori
-                tv_harga24.text = alatResponse.harga24.toString()
-                tv_harga12.text = alatResponse.harga12.toString()
-                tv_harga6.text = alatResponse.harga6.toString()
+                tv_harga24.text = alatResponse.harga24.toRupiah()
+                tv_harga12.text = alatResponse.harga12.toRupiah()
+                tv_harga6.text = alatResponse.harga6.toRupiah()
             }
         }
     }
