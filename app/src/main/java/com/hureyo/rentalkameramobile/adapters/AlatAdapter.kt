@@ -1,9 +1,11 @@
-package com.hureyo.rentalkameramobile
+package com.hureyo.rentalkameramobile.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hureyo.rentalkameramobile.models.AlatResponse
+import com.hureyo.rentalkameramobile.R
 import com.hureyo.rentalkameramobile.helper.toRupiah
 import kotlinx.android.synthetic.main.item_alat.view.*
 

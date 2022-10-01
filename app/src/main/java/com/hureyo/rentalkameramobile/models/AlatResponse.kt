@@ -1,4 +1,4 @@
-package com.hureyo.rentalkameramobile
+package com.hureyo.rentalkameramobile.models
 
 data class AlatResponse(
     val nama_alat: String?,

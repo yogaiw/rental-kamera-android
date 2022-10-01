@@ -3,6 +3,8 @@ package com.hureyo.rentalkameramobile
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hureyo.rentalkameramobile.adapters.AlatAdapter
+import com.hureyo.rentalkameramobile.models.AlatResponse
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
