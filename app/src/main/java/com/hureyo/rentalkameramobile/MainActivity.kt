@@ -2,6 +2,7 @@ package com.hureyo.rentalkameramobile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hureyo.rentalkameramobile.adapters.AlatAdapter
 import com.hureyo.rentalkameramobile.models.AlatResponse
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity() {
                 response.body()?.let { list.addAll(it) }
                 val adapter = AlatAdapter(list)
                 rv_alat.adapter = adapter
+
+                shimmer_view_container.stopShimmer()
+                shimmer_view_container.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<ArrayList<AlatResponse>>, t: Throwable) {
@@ -36,5 +40,15 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onResume() {
+        shimmer_view_container.startShimmer()
+        super.onResume()
+    }
+
+    override fun onPause() {
+        shimmer_view_container.stopShimmer()
+        super.onPause()
     }
 }
