@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface Api {
     @GET("alat")
-    fun getAlat(): Call<ArrayList<AlatResponse>>
+    fun getAlat(): Call<AlatResponse>
 }
