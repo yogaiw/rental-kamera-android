@@ -7,12 +7,46 @@
     tools:context=".MainActivity">
 
     <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="5sp"
+            android:layout_margin="5sp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginHorizontal="5sp"
+                android:backgroundTint="#808080"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginHorizontal="5sp"
+                android:backgroundTint="#808080"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginHorizontal="5sp"
+                android:backgroundTint="#808080"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginHorizontal="5sp"
+                android:backgroundTint="#808080"/>
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16sp"
         android:layout_marginTop="16sp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shimmer_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
@@ -31,12 +65,22 @@
     </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_alat"
+        android:id="@+id/rv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16sp"
         android:layout_marginTop="16sp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_alat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginTop="16sp"
+        app:layout_constraintTop_toBottomOf="@id/rv_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
