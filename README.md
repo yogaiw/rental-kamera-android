@@ -1,8 +1,4 @@
-# rental-mobile
-sebuah repo untuk latihan dan eksperiman consume API dari repo yogaiw/rental-kamera
+sebuah repo untuk latihan dan eksperimen consume API dari repo [yogaiw/rental-kamera](https://github.com/yogaiw/rental-kamera)
 
-Endpoint : https://kanciltest.tigasumbu.xyz/api/v1
-
-| Method      | Request |
-| ----------- | ----------- |
-| GET      | /alat      |
+Base URL : https://kanciltest.tigasumbu.xyz/api/v1 <br>
+API Docs [here](https://github.com/yogaiw/rental-kamera#api)
