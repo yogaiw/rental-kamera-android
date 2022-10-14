@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="150sp"
+        android:background="@drawable/curve_toolbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ib_profile"
+        android:layout_marginTop="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -64,13 +77,35 @@
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
 
+    <ImageButton
+        android:id="@+id/ib_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:background="@null"
+        android:layout_marginEnd="10sp"
+        app:layout_constraintEnd_toStartOf="@id/ib_profile"
+        app:layout_constraintTop_toTopOf="@id/ib_profile"
+        app:layout_constraintEnd_toEndOf="@id/ib_profile"/>
+
+    <ImageButton
+        android:id="@+id/ib_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_person_24"
+        android:background="@null"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16sp"
         android:layout_marginTop="16sp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ib_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -83,5 +118,14 @@
         app:layout_constraintTop_toBottomOf="@id/rv_category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/pb_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,5 +9,5 @@
         android:layout_width="wrap_content"
         android:layout_height="50sp"
         android:text="CATEGORY"
-        android:backgroundTint="#0E1A78"/>
+        android:backgroundTint="@color/teal_700"/>
 </LinearLayout>

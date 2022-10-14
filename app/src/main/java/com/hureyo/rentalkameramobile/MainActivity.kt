@@ -34,31 +34,12 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
         rv_category.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         getAlat()
+        getCategory()
 
-        RetrofitClient.instance.getCategory().enqueue(object : Callback<CategoryResponse> {
-            override fun onResponse(
-                call: Call<CategoryResponse>,
-                response: Response<CategoryResponse>
-            ) {
-                val categoryResponse = response.body()?.data
-                categoryResponse?.let { listCategory.addAll(it) }
-
-                val adapter = CategoryAdapter(this@MainActivity, listCategory, this@MainActivity)
-                rv_category.adapter = adapter
-
-                shimmer_category.stopShimmer()
-                shimmer_category.visibility = View.GONE
-            }
-
-            override fun onFailure(call: Call<CategoryResponse>, t: Throwable) {
-
-            }
-
-        })
     }
 
     override fun onCategoryClickListener(data: Category) {
-        shimmer_view_container.startShimmer()
+        pb_main.visibility = View.VISIBLE
         RetrofitClient.instance.getFilteredAlat(data.id).enqueue(object : Callback<AlatResponse> {
             override fun onResponse(call: Call<AlatResponse>, response: Response<AlatResponse>) {
                 val listResponse = response.body()?.data
@@ -70,8 +51,7 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
 
                 adapter.notifyDataSetChanged()
 
-                shimmer_view_container.stopShimmer()
-                shimmer_view_container.visibility = View.GONE
+                pb_main.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<AlatResponse>, t: Throwable) {
@@ -96,7 +76,29 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
             override fun onFailure(call: Call<AlatResponse>, t: Throwable) {
 
             }
+        })
+    }
 
+    private fun getCategory() {
+        RetrofitClient.instance.getCategory().enqueue(object : Callback<CategoryResponse> {
+            override fun onResponse(
+                call: Call<CategoryResponse>,
+                response: Response<CategoryResponse>
+            ) {
+                val categoryResponse = response.body()?.data
+                categoryResponse?.let { listCategory.addAll(it) }
+
+                val adapter = CategoryAdapter(this@MainActivity, listCategory, this@MainActivity)
+                rv_category.adapter = adapter
+
+                shimmer_category.stopShimmer()
+                shimmer_category.visibility = View.GONE
+                pb_main.visibility = View.GONE
+            }
+
+            override fun onFailure(call: Call<CategoryResponse>, t: Throwable) {
+
+            }
         })
     }
 
