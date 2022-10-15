@@ -6,16 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="140sp"
+        android:background="@drawable/curve_toolbar_bg_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/tv_detail_nama_alat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="20sp"/>
+        android:layout_marginTop="30sp"
+        android:layout_marginHorizontal="20sp"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_harga"
         android:layout_width="0dp"
@@ -97,7 +107,7 @@
         android:textStyle="bold"
         android:layout_marginTop="20sp"
         android:textColor="@color/black"
-        android:text="Sudah Terpesan"
+        android:text="Informasi Ketersediaan"
         app:layout_constraintStart_toStartOf="@id/tv_detail_nama_alat"
         app:layout_constraintTop_toBottomOf="@id/cv_harga"/>
     <TextView
@@ -132,7 +142,7 @@
         android:layout_height="60sp"
         android:layout_marginBottom="20sp"
         android:backgroundTint="@color/teal_700"
-        android:text="Masukan ke Keranjang"
+        android:text="Tambah ke Keranjang"
         android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -77,22 +77,29 @@
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
 
-    <ImageButton
+    <Button
         android:id="@+id/ib_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_shopping_cart_24"
+        android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
+        android:text="Keranjang"
+        android:textSize="11sp"
         android:background="@null"
         android:layout_marginEnd="10sp"
+        android:outlineProvider="none"
         app:layout_constraintEnd_toStartOf="@id/ib_profile"
         app:layout_constraintTop_toTopOf="@id/ib_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_profile"
         app:layout_constraintEnd_toEndOf="@id/ib_profile"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/ib_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_person_24"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:text="Profil"
+        android:outlineProvider="none"
+        android:textSize="11sp"
         android:background="@null"
         android:layout_marginTop="20sp"
         android:layout_marginEnd="20sp"
@@ -121,7 +128,9 @@
                 android:layout_weight="1"
                 android:textColor="@color/black"
                 android:textSize="11sp"
+                android:outlineProvider="none"
                 android:backgroundTint="@color/white"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:drawableLeft="@drawable/ic_baseline_book_24"/>
             <Button
                 android:layout_width="match_parent"
@@ -130,7 +139,9 @@
                 android:textSize="11sp"
                 android:layout_weight="1"
                 android:textColor="@color/black"
+                android:outlineProvider="none"
                 android:backgroundTint="@color/white"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:drawableLeft="@drawable/ic_baseline_history_24"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
