@@ -1,15 +1,18 @@
 package com.hureyo.rentalkameramobile.adapters
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hureyo.rentalkameramobile.DetailActivity
 import com.hureyo.rentalkameramobile.R
 import com.hureyo.rentalkameramobile.helper.toRupiah
 import com.hureyo.rentalkameramobile.models.Alat
 import kotlinx.android.synthetic.main.item_alat.view.*
 
-class AlatAdapter (private val list: ArrayList<Alat>): RecyclerView.Adapter<AlatAdapter.AlatViewHolder>() {
+class AlatAdapter(private val context: Context, private val list: ArrayList<Alat>): RecyclerView.Adapter<AlatAdapter.AlatViewHolder>() {
     inner class AlatViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(alatResponse: Alat) {
             with(itemView) {
@@ -31,5 +34,10 @@ class AlatAdapter (private val list: ArrayList<Alat>): RecyclerView.Adapter<Alat
 
     override fun onBindViewHolder(holder: AlatViewHolder, position: Int) {
         holder.bind(list[position])
+        holder.itemView.cv_alat.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("ALAT_ID", list[position].id)
+            context.startActivity(intent)
+        }
     }
 }

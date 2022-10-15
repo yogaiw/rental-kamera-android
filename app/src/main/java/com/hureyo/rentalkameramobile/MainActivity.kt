@@ -3,7 +3,6 @@ package com.hureyo.rentalkameramobile
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hureyo.rentalkameramobile.adapters.AlatAdapter
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
                 list.clear()
                 listResponse?.let { list.addAll(it) }
 
-                val adapter = AlatAdapter(list)
+                val adapter = AlatAdapter(this@MainActivity, list)
                 rv_alat.adapter = adapter
 
                 adapter.notifyDataSetChanged()
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
                 val listResponse = response.body()?.data
                 listResponse?.let { list.addAll(it) }
 
-                val adapter = AlatAdapter(list)
+                val adapter = AlatAdapter(this@MainActivity, list)
                 rv_alat.adapter = adapter
 
                 shimmer_view_container.stopShimmer()
